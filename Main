@@ -19,13 +19,11 @@ public class Videojuegos {
 
         personaje.recibirDaño(30);
 
-        System.out.println("Vida despues del daño: "
-                + personaje.getPuntosVida());
+        System.out.println("Vida despues del daño: " + personaje.getPuntosVida());
 
         personaje.recuperarVida(20);
 
-        System.out.println("Vida despues de recuperar: "
-                + personaje.getPuntosVida());
+        System.out.println("Vida despues de recuperar: " + personaje.getPuntosVida());
 
         personaje.getInventario().agregarObjeto("Espada");
         personaje.getInventario().agregarObjeto("Pocion");
