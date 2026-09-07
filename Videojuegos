@@ -1,0 +1,33 @@
+package sistema_de_reservas_de_hotel;
+
+public class Habitacion {
+    private int numero;
+    private String tipo;
+    private String estado;
+
+    public Habitacion(int numero, String tipo) {
+        this.numero = numero;
+        this.tipo = tipo;
+        this.estado = "Disponible";
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void cambiarEstado(String nuevoEstado) {
+        switch (nuevoEstado) {
+            case "Disponible" -> estado = "Disponible";
+            case "Ocupada" -> estado = "Ocupada";
+            case "Mantenimiento" -> estado = "Mantenimiento";
+        }
+    }
+}     
