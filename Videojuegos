@@ -1,33 +1,38 @@
-package sistema_de_reservas_de_hotel;
+package videojuegos;
+public class Videojuegos {
 
-public class Habitacion {
-    private int numero;
-    private String tipo;
-    private String estado;
+    public static void main(String[] args) {
+        Jugador jugador = new Jugador("Andres Piastri / Caballero");
 
-    public Habitacion(int numero, String tipo) {
-        this.numero = numero;
-        this.tipo = tipo;
-        this.estado = "Disponible";
+        jugador.crearPersonaje("Guerrero", 1, 100, 100);
+
+        Personaje personaje = jugador.getPersonaje();
+
+        System.out.println("Jugador: " + jugador.getNombre());
+        System.out.println("Personaje: " + personaje.getNombre());
+        System.out.println("Nivel: " + personaje.getNivel());
+        System.out.println("Vida: " + personaje.getPuntosVida());
+
+        personaje.subirNivel();
+
+        System.out.println("Nuevo nivel: " + personaje.getNivel());
+
+        personaje.recibirDaño(30);
+
+        System.out.println("Vida despues del daño: "
+                + personaje.getPuntosVida());
+
+        personaje.recuperarVida(20);
+
+        System.out.println("Vida despues de recuperar: "
+                + personaje.getPuntosVida());
+
+        personaje.getInventario().agregarObjeto("Espada");
+        personaje.getInventario().agregarObjeto("Pocion");
+
+        System.out.println("Objetos:");
+        personaje.getInventario().mostrarObjetos();
+        
+        jugador.eliminarPersonaje();
     }
-
-    public int getNumero() {
-        return numero;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void cambiarEstado(String nuevoEstado) {
-        switch (nuevoEstado) {
-            case "Disponible" -> estado = "Disponible";
-            case "Ocupada" -> estado = "Ocupada";
-            case "Mantenimiento" -> estado = "Mantenimiento";
-        }
-    }
-}     
